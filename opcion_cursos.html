@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<ul class="nav">
+  <li><a href="/index.html">Inicio</a></li>
+  <li><a href="/formulario.html">Inscripcion</a></li>
+  <li><a href="/aboutus.html">Sobre Nosotros</a></li>
+  <li><a href="/contacto.html">Contacto</a></li>
+</ul>
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+<head>
+	<title>Inscripcion</title>
+<style>
+#cursos {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#cursos td, #customers th {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+}
+
+#idinput {
+  width: 30%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+#cursos tr:nth-child(even){background-color: #f2f2f2;}
+
+#cursos tr:hover {background-color: #ddd;}
+
+#cursos th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+  background-color: #0d7963;
+  color: white;
+}
+
+</style>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body style="background-color: white">
+
+<h1>Cursos y talleres disponibles</h1><br>
+
+<form name="talleropt" action="." method="get">
+    <label for="eleccion"><b>Por favor, ingrese el <u>ID</u> del curso al que desee inscribirse</b></label>
+    <input id="idinput" type="number" placeholder="Ingrese aquí el número de ID" name="idcurso" required autofocus min="1" max="7">
+
+<br><br>
+
+
+	<table id="cursos">
+	<tr>
+		<th>id</th>
+		<th>nombre</th>
+		<th>turno</th>
+		<th>descripción</th>
+
+	</tr>
+
+        % for c in lista:
+        % #i=0
+
+
+	<tr>
+		<td>{{c[0]}}</td>
+		<td>{{c[1]}}</td>
+		<td>{{c[4]}}</td>
+		<td>{{c[5]}}</td>
+        %end
+
+    </tr>
+
+
+</table>
+	<br><br>
+	<button type="button" onclick="alert('Inscripcion completa. ¡Gracias por su visita!');window.location.href='index.html'" class="registerbtn" name="id_curso_incrip">Finalizar</button>
+
+</form>
+</body>
+</html>

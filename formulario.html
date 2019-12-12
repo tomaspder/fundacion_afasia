@@ -1,0 +1,57 @@
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+<head>
+  <title>Inscripcion</title>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<ul class="nav">
+  <li><a href="/index.html">Inicio</a></li>
+  <li><a href="/formulario.html">Inscripcion</a></li>
+  <li><a href="/aboutus.html">Sobre Nosotros</a></li>
+  <li><a href="/contacto.hmtl">Contacto</a></li>
+</ul>
+
+
+<form name="data" action="." method="post">
+  <div class="container">
+    <h1>Formulario de inscripción</h1>
+    <p>Por favor, complete los campos requeridos para registrarse a un curso.</p>
+    <hr>
+
+    <label for="nombre"><b>Nombre</b></label>
+    <input type="text" placeholder="Ingrese su nombre" name="nombre" required autofocus>
+    <label for="apellido"><b>Apellido</b></label>
+    <input type="text" placeholder="Ingrese su apellido" name="sname" required>
+      <label for="dni"><b>DNI</b></label>
+    <input type="text" placeholder="Ingrese DNI" name="dni" required min="1000000" max="45000000">
+
+    <label for="bday"><b>Fecha de nacimiento</b></label><br></br>
+    <input type="date" placeholder="aaaa-mm-dd" name="fecha" required><br></br>
+
+    <label for="user"><b>Usuario</b></label>
+    <input type="text" placeholder="Ingrese usuario (máximo 15 caracteres, solo alfanuméricos)" name="usuario" required>
+
+    <label for="psw"><b>Contraseña</b></label>
+    <input type="password" placeholder="Ingrese contraseña (máximo 15 caracteres, solo alfanuméricos)" name="psw" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Ingrese email" name="email" required>
+
+      <label for="domicilio"><b>Domicilio</b></label>
+    <input type="text" placeholder="Ingrese domicilio" name="domicilio" required>
+
+      <label for="diagnostico"><b>Diagnóstico</b></label>
+    <input type="text" placeholder="Ejemplo: Afasia de Broca" name="diagnostico" required>
+
+
+    <hr>
+
+
+    <button type="submit" class="registerbtn">Registrarse</button>
+  </div>
+
+  <div class="container signin">
+
+  </div>
+</form>
