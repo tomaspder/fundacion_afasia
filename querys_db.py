@@ -14,6 +14,13 @@ def devuelve_lista(valor):
 
 #Agrega para cada entidad
 
+#mostrar nombres de cursos
+def devuelve_cursos():
+    qyr = "SELECT nombre FROM cursos;"
+    mycursor.execute(qyr)
+    cc = mycursor.fetchall()
+    return list(cc)
+
 def agregar_alumno(valores):
 
     qry = '''INSERT INTO `alumnos` (`id`,`nombre`, `apellido`, `usuario`, `password`, `email`, `dni`, `domicilio`, `fechanac`, `diagnos`) 
@@ -180,3 +187,7 @@ def busqueda_mat_alum(valores):
     con.commit()
     return list(bma)
 
+#proban2
+if __name__== '__main__':
+    print(devuelve_lista('alumnos'))
+    print(devuelve_lista('cursos'))

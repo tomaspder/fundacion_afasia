@@ -5,7 +5,6 @@ import querys_db
 
 @route('/<filepath:path>')
 def server_static(filepath):
-    """ para archivos estáticos (.css, imagenes, etc.) """
     return static_file(filepath, root='.')
 
 @route("/")
@@ -15,8 +14,8 @@ def index():
 
 @get("/formulario")
 def formulario():
-
     return template('formulario.html')
+
 @get("opcion_crusos.html")
 def opcion_cursos():
     return template('opcion_cursos.html')
@@ -43,9 +42,6 @@ def getUserInfo():
                 "domicilio":domicilio,
                 "diagnostico":diagnostico}
 
-
-    #fieldscheck.validar_campos(userData)
-    #return userData
     if fieldscheck.validar_campos(userData):
         querys_db.agregar_alumno(userData)
         lista = querys_db.devuelve_lista("cursos")
@@ -63,13 +59,20 @@ def opcion_cursos():
     ejec_inscrip = querys_db.inscribir_alumno(valores)
     return template("opcion_cursos.html", lista=lista)
 
-'''
-@route('/opcion_cursos', method='get')
-def getcursoelegido():
-    idcurso = request.GET.get("idcurso")
-    lista = querys_db.devuelve_lista("cursos")
-    idalumno = querys_db.ultimo_inscripto()
-    querys_db.inscribir_alumno()'''
+
+@post('/verdatos.html', method='POST')
+def verdatos():
+    response = request.POST.get('selector')
+    if response == '1':
+        alumnos = querys_db.devuelve_lista('alumnos')
+        return template('verdatos.html', lista = alumnos, valor = 1)
+    if response == '2':
+        cursos = querys_db.devuelve_lista('cursos')
+        return template('verdatos.html', lista = cursos, valor = 2)
+    if response == '3':
+        profesionales = querys_db.devuelve_lista('profesionales')
+        return template('verdatos.html', lista = profesionales, valor = 3)
+
 
 run(host='localhost', port=8080, debug=True, reloader=True)
 

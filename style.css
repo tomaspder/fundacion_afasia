@@ -77,7 +77,26 @@ hr {
   border-radius: 8px;
 }
 
-.registerbtn:hover {
+.verbtn {
+  position: absolute;
+  left: 25%;
+  top: 105px;
+  background-color: #3383fa;
+  color: white;
+  padding: 10px 10px;
+  margin: 8px 0;
+  margin-left: 30%;
+  margin-right: 30%;
+  border: none;
+  cursor: pointer;
+  width: 60px;
+  height: 40px;
+  opacity: 0.9;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.registerbtn:hover, .verbtn:hover {
   opacity: 1;
 }
 
